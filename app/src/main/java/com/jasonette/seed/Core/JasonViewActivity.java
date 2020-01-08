@@ -2936,15 +2936,7 @@ public class JasonViewActivity extends AppCompatActivity implements ActivityComp
     @Override
     public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
         if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-            switch(requestCode){
-                case 50:
-                    /*Camera option*/
-                    cameraManager.startVision(JasonViewActivity.this);
-                    break;
-                case 51:
-                    /*GPS option*/
-                    break;
-            }
+            cameraManager.startVision(JasonViewActivity.this);
         } else {
             Log.d("Warning", "Waiting for permission approval");
         }
